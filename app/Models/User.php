@@ -9,6 +9,23 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
+
+
+
+/**
+* @OA\SecurityScheme(
+*     type="http",
+*     description="Login with email and password to get the authentication token",
+*     name="Token based Based",
+*     in="header",
+*     scheme="bearer",
+*     bearerFormat="JWT",
+*     securityScheme="apiAuth",
+* )
+*/
+
+
+
 class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
